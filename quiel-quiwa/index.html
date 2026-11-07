@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiel Quiwa</title>
+<style>
+  :root { --ink:#1f2933; --muted:#616e7c; --accent:#2563eb; --soft:#f1f5f9; --line:#cbd2d9; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:#fff; line-height:1.6; }
+  header { background: linear-gradient(135deg,#1e3a8a,#2563eb); color:#fff; padding:56px 24px; text-align:center; }
+  header h1 { margin:0 0 8px; font-size:2.6rem; letter-spacing:-0.02em; }
+  header p { margin:0; opacity:.9; font-size:1.1rem; }
+  main { max-width:920px; margin:0 auto; padding:0 24px 64px; }
+  section { margin-top:48px; }
+  h2 { font-size:1.5rem; margin:0 0 16px; padding-bottom:8px; border-bottom:2px solid var(--soft); }
+  .note { background:#fff8e1; border-left:4px solid #f59e0b; padding:12px 16px; border-radius:6px; font-size:.95rem; color:#5b4500; }
+  .muted { color:var(--muted); font-size:.9rem; }
+
+  /* Timeline */
+  .timeline { position:relative; margin:0; padding:0 0 0 28px; list-style:none; border-left:3px solid var(--accent); }
+  .timeline li { position:relative; margin-bottom:22px; padding:14px 18px; background:var(--soft); border-radius:10px; }
+  .timeline li::before { content:""; position:absolute; left:-38px; top:20px; width:16px; height:16px; border-radius:50%; background:#fff; border:3px solid var(--accent); }
+  .timeline li.current::before { background:var(--accent); }
+  .when { font-size:.8rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); }
+  .timeline h3 { margin:4px 0 2px; font-size:1.05rem; }
+  .timeline p { margin:0; color:var(--muted); font-size:.95rem; }
+  .tag { display:inline-block; font-size:.72rem; padding:2px 8px; border-radius:999px; background:#e0e7ff; color:#3730a3; margin-left:6px; vertical-align:middle; }
+
+  /* Role diagram */
+  .diagram { width:100%; height:auto; display:block; }
+  .diagram .spoke { stroke:var(--line); stroke-width:2; }
+  .diagram .hub { fill:var(--accent); }
+  .diagram .node { fill:#fff; stroke:var(--accent); stroke-width:1.5; }
+  .diagram .t { font-size:13px; font-weight:700; fill:var(--ink); }
+  .diagram .s { font-size:11.5px; fill:var(--muted); }
+  .diagram .hubt { font-size:16px; font-weight:700; fill:#fff; }
+
+  /* Education */
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  .card { border:1px solid var(--line); border-radius:12px; padding:18px; }
+  .card h3 { margin:0 0 6px; font-size:1.05rem; }
+  .card p { margin:0; color:var(--muted); font-size:.95rem; }
+
+  /* Sources */
+  ol.sources { padding-left:20px; }
+  ol.sources li { margin-bottom:10px; }
+  a { color:var(--accent); word-break:break-all; }
+  footer { text-align:center; color:var(--muted); font-size:.85rem; padding:24px; border-top:1px solid var(--soft); }
+  @media (max-width:600px) { header h1 { font-size:2rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Quiel Quiwa</h1>
+  <p>AI, data consulting, startups, education policy, and youth organizing</p>
+</header>
+
+<main>
+
+  <section id="bio">
+    <h2>Bio</h2>
+    <p>Quiel Quiwa is a professional whose work, as listed in public sources, spans enterprise AI and data consulting, startup leadership, education policy coordination, and youth development and political organizing. He has worked with ASA Philippines as Chief of Staff and, as of the most recent source, is at Solutions Exchange as an Associate Product Analyst.</p>
+  </section>
+
+  <section id="timeline">
+    <h2>Career timeline</h2>
+    <ul class="timeline">
+      <li>
+        <div class="when">Oct 2022 to May 2024</div>
+        <h3>Co-founder and CTO, Meron</h3>
+        <p>Co-founded and led technology as chief technology officer.</p>
+      </li>
+      <li>
+        <div class="when">Mar 2023 to May 2024</div>
+        <h3>Policy coordination officer, Philippine Business for Education</h3>
+        <p>Coordinated education policy work. Overlaps with the Meron role.</p>
+      </li>
+      <li>
+        <div class="when">Dates not confirmed</div>
+        <h3>Chief of Staff, ASA Philippines</h3>
+      </li>
+      <li>
+        <div class="when">Dates not confirmed</div>
+        <h3>Enterprise AI and data consulting, Thinking Machines</h3>
+      </li>
+      <li>
+        <div class="when">Dates not confirmed</div>
+        <h3>Youth development work, Office of the Vice President (Angat Buhay)</h3>
+      </li>
+      <li>
+        <div class="when">Dates not confirmed</div>
+        <h3>Youth political organizing</h3>
+      </li>
+      <li class="current">
+        <div class="when">Current <span class="tag">per one source</span></div>
+        <h3>Associate Product Analyst, Solutions Exchange</h3>
+        <p>Listed as current on the RocketReach Solutions Exchange page.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="roles">
+    <h2>Roles at a glance</h2>
+    <svg class="diagram" viewBox="0 0 600 400" role="img" aria-label="Diagram of Quiel Quiwa's roles around his name">
+      <!-- spokes -->
+      <line class="spoke" x1="300" y1="200" x2="300" y2="50"/>
+      <line class="spoke" x1="300" y1="200" x2="430" y2="125"/>
+      <line class="spoke" x1="300" y1="200" x2="430" y2="275"/>
+      <line class="spoke" x1="300" y1="200" x2="300" y2="350"/>
+      <line class="spoke" x1="300" y1="200" x2="170" y2="275"/>
+      <line class="spoke" x1="300" y1="200" x2="170" y2="125"/>
+      <!-- hub -->
+      <rect class="hub" x="215" y="170" width="170" height="60" rx="30"/>
+      <text class="hubt" x="300" y="206" text-anchor="middle">Quiel Quiwa</text>
+      <!-- role nodes -->
+      <rect class="node" x="205" y="25" width="190" height="50" rx="8"/>
+      <text class="t" x="300" y="46" text-anchor="middle">ASA Philippines</text>
+      <text class="s" x="300" y="63" text-anchor="middle">Chief of Staff</text>
+
+      <rect class="node" x="335" y="100" width="190" height="50" rx="8"/>
+      <text class="t" x="430" y="121" text-anchor="middle">Thinking Machines</text>
+      <text class="s" x="430" y="138" text-anchor="middle">Enterprise AI and data consulting</text>
+
+      <rect class="node" x="335" y="250" width="190" height="50" rx="8"/>
+      <text class="t" x="430" y="271" text-anchor="middle">Meron</text>
+      <text class="s" x="430" y="288" text-anchor="middle">Co-founder and CTO (2022 to 2024)</text>
+
+      <rect class="node" x="205" y="325" width="190" height="50" rx="8"/>
+      <text class="t" x="300" y="346" text-anchor="middle">Philippine Business for Education</text>
+      <text class="s" x="300" y="363" text-anchor="middle">Policy coordination (2023 to 2024)</text>
+
+      <rect class="node" x="75" y="250" width="190" height="50" rx="8"/>
+      <text class="t" x="170" y="271" text-anchor="middle">Office of the Vice President</text>
+      <text class="s" x="170" y="288" text-anchor="middle">Angat Buhay youth development</text>
+
+      <rect class="node" x="75" y="100" width="190" height="50" rx="8"/>
+      <text class="t" x="170" y="121" text-anchor="middle">Youth political organizing</text>
+      <text class="s" x="170" y="138" text-anchor="middle">Civic and youth organizing</text>
+    </svg>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Electronics engineering</h3>
+        <p>Licensed electronics engineer.</p>
+      </div>
+      <div class="card">
+        <h3>Master's in artificial intelligence</h3>
+        <p>In progress.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <p class="note"><strong>Note:</strong> These sources may be out of date. The current-role detail (Associate Product Analyst at Solutions Exchange) comes from one source only and should be checked.</p>
+    <ol class="sources">
+      <li>LinkedIn profile: <a href="https://ph.linkedin.com/in/quielquiwa">https://ph.linkedin.com/in/quielquiwa</a></li>
+      <li>RocketReach Solutions Exchange page: <span class="muted">URL to be added</span></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>Static page built from public sources. Last checked date not recorded.</footer>
+
+</body>
+</html>
